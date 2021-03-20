@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEE THE FLOWER</title>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
+    >
+      <a-assets>
+        <a-asset-item
+          id="flower-obj"
+          src="./models/flowey-the-flower-obj/flowey-the-flower.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="flower-mtl"
+          src="./models/flowey-the-flower-obj/flowey-the-flower.mtl"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        obj-model="obj: #flower-obj; mtl: #flower-mtl"
+        position="0 30 0"
+        scale="2.5 2.5 2.5"
+        gps-entity-place="latitude:52.80191712031636; longitude: 18.262280757713295;"
+      ></a-entity>
+
+      <a-entity
+        obj-model="obj: #flower-obj; mtl: #flower-mtl"
+        position="0 30 0"
+        scale="2.5 2.5 2.5"
+        gps-entity-place="latitude:52.78471813644758; longitude:18.25234204832645;"
+      ></a-entity>
+
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body>
+</html>
